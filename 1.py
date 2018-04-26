@@ -1,0 +1,10 @@
+import pandas as pd
+print('..')
+xl = pd.ExcelFile("/home/sree/Downloads/Personal/S1.xlsx")
+df = xl.parse("Sheet1")
+df = df.sort(columns="col2")
+print('....')
+writer = pd.ExcelWriter('output.xlsx')
+df.to_excel(writer,sheet_name='Sort',columns=["columns"],index=False)
+writer.save()
+print('sd')
